@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -270,6 +271,7 @@ h2 {
 
 .hero {
     position: relative;
+    width: 100%;
     min-height: 780px;
     background: var(--black);
     color: var(--white);
@@ -282,15 +284,24 @@ h2 {
     position: absolute;
     inset: 0;
     background:
-        linear-gradient(90deg, rgba(0,0,0,.94) 0%, rgba(0,0,0,.78) 42%, rgba(0,0,0,.12) 100%),
+        linear-gradient(
+            90deg,
+            rgba(0,0,0,.94) 0%,
+            rgba(0,0,0,.78) 42%,
+            rgba(0,0,0,.12) 100%
+        ),
         url('https://images.unsplash.com/photo-1606811971618-4486d14f3f99?auto=format&fit=crop&w=2000&q=85') center/cover;
     opacity: .9;
 }
 
+/* FIXED HERO CONTENT ALIGNMENT */
+
 .hero-content {
     position: relative;
     z-index: 2;
-    width: 100%;
+    width: min(var(--container), calc(100% - 80px));
+    max-width: var(--container);
+    margin-inline: auto;
     padding-top: 115px;
 }
 
@@ -917,8 +928,14 @@ h2 {
 /* RESPONSIVE */
 
 @media(max-width:1100px) {
+
     .container {
         width: min(100% - 50px, var(--container));
+    }
+
+    /* HERO ALIGNMENT */
+    .hero-content {
+        width: calc(100% - 50px);
     }
 
     .nav-links {
@@ -1045,6 +1062,11 @@ h2 {
 
     .section {
         padding: 70px 0;
+    }
+
+    /* HERO ALIGNMENT */
+    .hero-content {
+        width: calc(100% - 40px);
     }
 
     .header-top-inner {
@@ -1251,7 +1273,6 @@ h2 {
 
 </header>
 
-
 <!-- HERO -->
 
 <section class="hero">
@@ -1310,7 +1331,6 @@ h2 {
 
 </section>
 
-
 <!-- INTRODUCTION -->
 
 <section class="section intro-section" id="about">
@@ -1352,8 +1372,7 @@ h2 {
 
 </section>
 
-
-<!-- SIX CUSTOM SVG ICONS -->
+<!-- EXPERIENCE -->
 
 <section class="section experience">
 
@@ -1374,33 +1393,20 @@ h2 {
 
         </div>
 
-
         <div class="experience-grid">
 
-            <!-- ICON 1 -->
-
             <div class="experience-item">
-
                 <div class="experience-icon">
                     <svg viewBox="0 0 48 48">
                         <path d="M24 5 L39 11 V22 C39 32 33 39 24 44 C15 39 9 32 9 22 V11 Z"/>
                         <path d="M17 24 L22 29 L32 18"/>
                     </svg>
                 </div>
-
                 <h3>Patient Safety</h3>
-                <p>
-                    Hygiene and sterilisation protocols are an
-                    important part of the Dentzz patient experience.
-                </p>
-
+                <p>Hygiene and sterilisation protocols are an important part of the Dentzz patient experience.</p>
             </div>
 
-
-            <!-- ICON 2 -->
-
             <div class="experience-item">
-
                 <div class="experience-icon">
                     <svg viewBox="0 0 48 48">
                         <path d="M12 8 H36 V40 H12 Z"/>
@@ -1408,20 +1414,11 @@ h2 {
                         <path d="M24 32 L29 37 L39 25"/>
                     </svg>
                 </div>
-
                 <h3>Specialist Expertise</h3>
-                <p>
-                    A multidisciplinary team with experience across
-                    cosmetic, restorative and implant dentistry.
-                </p>
-
+                <p>A multidisciplinary team with experience across cosmetic, restorative and implant dentistry.</p>
             </div>
 
-
-            <!-- ICON 3 -->
-
             <div class="experience-item">
-
                 <div class="experience-icon">
                     <svg viewBox="0 0 48 48">
                         <circle cx="24" cy="24" r="18"/>
@@ -1430,20 +1427,11 @@ h2 {
                         <path d="M24 2 V8 M24 40 V46 M2 24 H8 M40 24 H46"/>
                     </svg>
                 </div>
-
                 <h3>Precise Diagnostics</h3>
-                <p>
-                    Advanced diagnostic technology, including
-                    in-house 3D CT scanning capabilities.
-                </p>
-
+                <p>Advanced diagnostic technology, including in-house 3D CT scanning capabilities.</p>
             </div>
 
-
-            <!-- ICON 4 -->
-
             <div class="experience-item">
-
                 <div class="experience-icon">
                     <svg viewBox="0 0 48 48">
                         <path d="M8 25 C8 16 15 10 24 10 C33 10 40 16 40 25"/>
@@ -1452,20 +1440,11 @@ h2 {
                         <path d="M17 20 C20 18 28 18 31 20"/>
                     </svg>
                 </div>
-
                 <h3>Smile Transformations</h3>
-                <p>
-                    Cosmetic dentistry and smile makeover solutions
-                    designed around individual treatment requirements.
-                </p>
-
+                <p>Cosmetic dentistry and smile makeover solutions designed around individual treatment requirements.</p>
             </div>
 
-
-            <!-- ICON 5 -->
-
             <div class="experience-item">
-
                 <div class="experience-icon">
                     <svg viewBox="0 0 48 48">
                         <rect x="6" y="9" width="36" height="27" rx="2"/>
@@ -1473,20 +1452,11 @@ h2 {
                         <path d="M19 42 H29 M24 36 V42"/>
                     </svg>
                 </div>
-
                 <h3>Advanced Technology</h3>
-                <p>
-                    Digital Smile Design, CEREC CAD CAM,
-                    laser dentistry and other modern technologies.
-                </p>
-
+                <p>Digital Smile Design, CEREC CAD CAM, laser dentistry and other modern technologies.</p>
             </div>
 
-
-            <!-- ICON 6 -->
-
             <div class="experience-item">
-
                 <div class="experience-icon">
                     <svg viewBox="0 0 48 48">
                         <circle cx="24" cy="16" r="8"/>
@@ -1495,13 +1465,8 @@ h2 {
                         <path d="M39 5 V16"/>
                     </svg>
                 </div>
-
                 <h3>Personalised Care</h3>
-                <p>
-                    A patient-focused approach with support throughout
-                    the treatment planning and decision-making journey.
-                </p>
-
+                <p>A patient-focused approach with support throughout the treatment planning and decision-making journey.</p>
             </div>
 
         </div>
@@ -1510,7 +1475,6 @@ h2 {
 
 </section>
 
-
 <!-- TREATMENTS -->
 
 <section class="section services" id="services">
@@ -1518,7 +1482,6 @@ h2 {
     <div class="container">
 
         <div class="services-heading">
-
             <div class="eyebrow">Explore Our Treatments</div>
 
             <h2>
@@ -1531,69 +1494,52 @@ h2 {
                 designed to address different dental health,
                 restorative and cosmetic requirements.
             </p>
-
         </div>
-
 
         <div class="services-layout">
 
             <div class="services-image">
-
                 <img
                     src="https://images.unsplash.com/photo-1606811971618-4486d14f3f99?auto=format&fit=crop&w=1100&q=85"
                     alt="Modern dental treatment environment"
                     loading="lazy"
                 >
-
-                <div class="image-label">
-                    Personalised Dental Solutions
-                </div>
-
+                <div class="image-label">Personalised Dental Solutions</div>
             </div>
 
-
             <div>
-
                 <div class="service-list">
 
                     <a href="https://www.dentzzdental.com/dental-implants" class="service-row">
-                        <h3>Dental Implants</h3>
-                        <span>↗</span>
+                        <h3>Dental Implants</h3><span>↗</span>
                     </a>
 
                     <a href="https://www.dentzzdental.com/cosmetic-dentistry" class="service-row">
-                        <h3>Cosmetic Dentistry</h3>
-                        <span>↗</span>
+                        <h3>Cosmetic Dentistry</h3><span>↗</span>
                     </a>
 
                     <a href="https://www.dentzzdental.com/full-mouth-reconstruction" class="service-row">
-                        <h3>Full Mouth Reconstruction</h3>
-                        <span>↗</span>
+                        <h3>Full Mouth Reconstruction</h3><span>↗</span>
                     </a>
 
                     <a href="https://www.dentzzdental.com/invisible-braces" class="service-row">
-                        <h3>Invisible Braces</h3>
-                        <span>↗</span>
+                        <h3>Invisible Braces</h3><span>↗</span>
                     </a>
 
                     <a href="https://www.dentzzdental.com/teeth-whitening" class="service-row">
-                        <h3>Teeth Whitening</h3>
-                        <span>↗</span>
+                        <h3>Teeth Whitening</h3><span>↗</span>
                     </a>
 
                     <a href="https://www.dentzzdental.com/painless-root-canal" class="service-row">
-                        <h3>Root Canal Treatments</h3>
-                        <span>↗</span>
+                        <h3>Root Canal Treatments</h3><span>↗</span>
                     </a>
 
                     <a href="https://www.dentzzdental.com/advanced-gum-treatments" class="service-row">
-                        <h3>Advanced Gum Treatments</h3>
-                        <span>↗</span>
+                        <h3>Advanced Gum Treatments</h3><span>↗</span>
                     </a>
 
                     <a href="https://www.dentzzdental.com/comprehensive-consultations" class="service-row">
-                        <h3>Comprehensive Consultations</h3>
-                        <span>↗</span>
+                        <h3>Comprehensive Consultations</h3><span>↗</span>
                     </a>
 
                 </div>
@@ -1602,7 +1548,6 @@ h2 {
                     Treatment suitability and recommendations are
                     determined following an individual dental consultation.
                 </p>
-
             </div>
 
         </div>
@@ -1611,7 +1556,6 @@ h2 {
 
 </section>
 
-
 <!-- SMILE MAKEOVERS -->
 
 <section class="section feature-section">
@@ -1619,22 +1563,18 @@ h2 {
     <div class="container feature-layout">
 
         <div class="feature-image">
-
             <img
                 src="https://images.unsplash.com/photo-1609840114035-3c981b782dfe?auto=format&fit=crop&w=1000&q=85"
                 alt="Dental specialist working with modern dental equipment"
                 loading="lazy"
             >
-
         </div>
 
         <div class="feature-content">
 
             <div class="eyebrow">Cosmetic & Restorative Dentistry</div>
 
-            <h2>
-                Crafting the story behind your smile.
-            </h2>
+            <h2>Crafting the story behind your smile.</h2>
 
             <p>
                 A smile makeover can involve several aspects of
@@ -1679,7 +1619,6 @@ h2 {
 
 </section>
 
-
 <!-- TECHNOLOGY -->
 
 <section class="section technology" id="technology">
@@ -1687,7 +1626,6 @@ h2 {
     <div class="container">
 
         <div class="tech-heading">
-
             <div class="eyebrow">Modern Dental Technology</div>
 
             <h2>Precision meets modern dentistry.</h2>
@@ -1697,64 +1635,44 @@ h2 {
                 diagnostics, treatment planning and restorative procedures.
                 Explore some of the technologies available at Dentzz.
             </p>
-
         </div>
-
 
         <div class="tech-grid">
 
             <div class="tech-item">
                 <div class="tech-number">01 / DIAGNOSTICS</div>
                 <h3>3D CT Scan</h3>
-                <p>
-                    Three-dimensional imaging to support detailed
-                    dental diagnosis and treatment planning.
-                </p>
+                <p>Three-dimensional imaging to support detailed dental diagnosis and treatment planning.</p>
             </div>
 
             <div class="tech-item">
                 <div class="tech-number">02 / RESTORATION</div>
                 <h3>CEREC One Visit Crowns</h3>
-                <p>
-                    CAD CAM technology supporting digitally
-                    designed dental crown procedures.
-                </p>
+                <p>CAD CAM technology supporting digitally designed dental crown procedures.</p>
             </div>
 
             <div class="tech-item">
                 <div class="tech-number">03 / DESIGN</div>
                 <h3>Digital Smile Design</h3>
-                <p>
-                    Digital planning tools that help explore
-                    cosmetic smile treatment possibilities.
-                </p>
+                <p>Digital planning tools that help explore cosmetic smile treatment possibilities.</p>
             </div>
 
             <div class="tech-item">
                 <div class="tech-number">04 / TREATMENT</div>
                 <h3>Laser Dentistry</h3>
-                <p>
-                    Advanced laser technology for selected
-                    dental treatment applications.
-                </p>
+                <p>Advanced laser technology for selected dental treatment applications.</p>
             </div>
 
             <div class="tech-item">
                 <div class="tech-number">05 / PRECISION</div>
                 <h3>T-Scan Bite Analysis</h3>
-                <p>
-                    Digital bite analysis technology to assess
-                    bite contact and distribution.
-                </p>
+                <p>Digital bite analysis technology to assess bite contact and distribution.</p>
             </div>
 
             <div class="tech-item">
                 <div class="tech-number">06 / RESTORATION</div>
                 <h3>Teeth in One Day</h3>
-                <p>
-                    Explore treatment options designed around
-                    immediate dental restoration requirements.
-                </p>
+                <p>Explore treatment options designed around immediate dental restoration requirements.</p>
             </div>
 
         </div>
@@ -1762,7 +1680,6 @@ h2 {
     </div>
 
 </section>
-
 
 <!-- SPECIALISTS -->
 
@@ -1785,11 +1702,9 @@ h2 {
 
         </div>
 
-
         <div class="team-grid">
 
             <article class="team-member">
-
                 <div class="team-photo">
                     <img
                         src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=700&q=85"
@@ -1797,17 +1712,13 @@ h2 {
                         loading="lazy"
                     >
                 </div>
-
                 <div class="team-info">
                     <h3>Dr. Karishma Jaradi</h3>
                     <p>Celebrity Cosmetic Dentist · Global Head Dentist</p>
                 </div>
-
             </article>
 
-
             <article class="team-member">
-
                 <div class="team-photo">
                     <img
                         src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&w=700&q=85"
@@ -1815,17 +1726,13 @@ h2 {
                         loading="lazy"
                     >
                 </div>
-
                 <div class="team-info">
                     <h3>Dr. Kamran Khorrami</h3>
                     <p>Implantologist and Oral & Maxillofacial Surgery Specialist</p>
                 </div>
-
             </article>
 
-
             <article class="team-member">
-
                 <div class="team-photo">
                     <img
                         src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?auto=format&fit=crop&w=700&q=85"
@@ -1833,12 +1740,10 @@ h2 {
                         loading="lazy"
                     >
                 </div>
-
                 <div class="team-info">
                     <h3>Dr. Akanksha Chandak</h3>
                     <p>Aesthetic Dentist</p>
                 </div>
-
             </article>
 
         </div>
@@ -1853,7 +1758,6 @@ h2 {
 
 </section>
 
-
 <!-- LOCATIONS -->
 
 <section class="section locations" id="locations">
@@ -1861,15 +1765,12 @@ h2 {
     <div class="container locations-layout">
 
         <div class="locations-image">
-
             <img
                 src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1100&q=85"
                 alt="Contemporary dental clinic interior"
                 loading="lazy"
             >
-
         </div>
-
 
         <div class="locations-content">
 
@@ -1914,7 +1815,6 @@ h2 {
 
 </section>
 
-
 <!-- PATIENT EXPERIENCE -->
 
 <section class="testimonial">
@@ -1933,13 +1833,11 @@ h2 {
         </h2>
 
         <div class="testimonial-author">Soha Ali Khan</div>
-
         <div class="testimonial-location">India</div>
 
     </div>
 
 </section>
-
 
 <!-- FINAL CTA -->
 
@@ -1951,9 +1849,7 @@ h2 {
             Your Smile Journey Starts Here
         </div>
 
-        <h2>
-            Ready to see what is possible?
-        </h2>
+        <h2>Ready to see what is possible?</h2>
 
         <p>
             Take the first step towards understanding your dental
@@ -1969,7 +1865,6 @@ h2 {
 
 </section>
 
-
 <!-- FOOTER -->
 
 <footer class="footer">
@@ -1979,7 +1874,6 @@ h2 {
         <div class="footer-grid">
 
             <div class="footer-brand">
-
                 <a href="#" class="logo">DENTZZ<span>.</span></a>
 
                 <p>
@@ -1987,9 +1881,7 @@ h2 {
                     planning and a considered approach to
                     creating healthier, confident smiles.
                 </p>
-
             </div>
-
 
             <div class="footer-column">
 
@@ -2005,7 +1897,6 @@ h2 {
 
             </div>
 
-
             <div class="footer-column">
 
                 <h4>Explore Dentzz</h4>
@@ -2019,7 +1910,6 @@ h2 {
                 </ul>
 
             </div>
-
 
             <div class="footer-column">
 
@@ -2036,11 +1926,9 @@ h2 {
 
         </div>
 
-
         <div class="footer-bottom">
 
             <span>© 2026 Dentzz Dental. All rights reserved.</span>
-
             <span>Advanced Dentistry · Personalised Care</span>
 
         </div>
@@ -2048,7 +1936,6 @@ h2 {
     </div>
 
 </footer>
-
 
 <!-- MOBILE STICKY CTA -->
 
@@ -2063,7 +1950,6 @@ h2 {
     </a>
 
 </div>
-
 
 <!-- JAVASCRIPT -->
 
