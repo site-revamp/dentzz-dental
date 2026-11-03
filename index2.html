@@ -1740,6 +1740,28 @@
         font-size: 9px;
       }
     }
+
+    /* Hero alignment fix */
+.hero {
+  width: 100%;
+}
+
+.hero > .container {
+  width: min(calc(100% - 20px), var(--container));
+  margin-inline: auto;
+  padding-inline: 10px;
+}
+
+.hero-content {
+  width: 100%;
+  max-width: 800px;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.hero-background {
+  width: 100%;
+}
   </style>
 </head>
 
