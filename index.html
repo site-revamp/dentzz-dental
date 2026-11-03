@@ -457,12 +457,12 @@
     /* Hero */
 
     .hero {
-      position: relative;
-      display: flex;
-      min-height: min(760px, calc(100svh - 88px));
-      align-items: center;
-      overflow: hidden;
-      background: #F5F5F5;
+    position: relative;
+    display: flex;
+    min-height: min(760px, calc(100svh - 88px));
+    align-items: center;
+    overflow: hidden;
+    background: #F5F5F5;
     }
 
     .hero::before {
@@ -488,14 +488,13 @@
     }
 
     .hero-inner {
-      position: relative;
-      z-index: 1;
-      display: grid;
-      width: 100%;
-      grid-template-columns: minmax(0, 1.08fr) minmax(320px, .92fr);
-      align-items: center;
-      gap: clamp(40px, 7vw, 100px);
-      padding-block: 85px;
+        position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: minmax(0, 1.08fr) minmax(320px, 0.92fr);
+    align-items: center;
+    gap: clamp(40px, 7vw, 100px);
+    padding-block: 85px;
     }
 
     .hero-copy {
